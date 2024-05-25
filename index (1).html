@@ -2,44 +2,56 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirecionando...</title>
+    <meta http-equiv="refresh" content="6;url=https://go.perfectpay.com.br/PPU38COIKAN">
+    <title>Aguardando...</title>
     <style>
         body {
-            text-align: center;
-            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
             background-color: #f0f0f0;
-            margin-top: 50px;
-        }
-        h1 {
-            color: #333;
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
         .container {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .hidden-link {
+        .gif-container {
+            position: relative;
+        }
+        .gif-link {
             position: absolute;
-            left: -9999px;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10;
         }
     </style>
-    <script type="text/javascript">
-        setTimeout(function() {
-            window.location.href = "https://go.perfectpay.com.br/PPU38COIKAN";
-        }, 5000);
-    </script>
 </head>
 <body>
     <div class="container">
-        <h1>Carregando...</h1>
-        <a href="https://go.perfectpay.com.br/PPU38COIKAN" class="hidden-link">Link Escondido</a>
-        <a href="https://go.perfectpay.com.br/PPU38COIKAN">
-            <img src="caminho-para-seu-gif.gif" alt="GIF de espera">
-        </a>
-        <p>Carregado...</p>
+        <div class="gif-container">
+            <a href="https://go.perfectpay.com.br/PPU38COIKAN" class="gif-link"></a>
+            <img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="GIF de espera">
+        </div>
+        <p id="countdown">Aguarde um momento... Redirecionando em <span id="timer">5</span> segundos.</p>
     </div>
+    <script>
+        // Contagem regressiva de 5 segundos
+        let seconds = 5;
+        const countdown = document.getElementById('timer');
+        const countdownInterval = setInterval(() => {
+            seconds--;
+            countdown.textContent = seconds;
+            if (seconds <= 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
